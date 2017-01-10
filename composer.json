@@ -1,0 +1,16 @@
+{
+    "name": "cosmos-cms/cosmos-php",
+    "description": "The PHP SDK for CosMoS, the universal cms.",
+
+    "autoload": {
+      "psr-4": {
+        "Cosmos\\": "src"
+      }
+    },
+
+    "require": {
+      "php": ">=5.4.0",
+      "ext-openssl": "*",
+      "lib-openssl": "*"
+    }
+}
