@@ -7,13 +7,14 @@ use Cosmos\Content;
 class Cache{
 
   private $dir, $file;
-  private $refreshRate = 60 * 60 * 24;
+  private $refreshRate;
   private static $cache;
   private $contents = array();
 
   private function __construct($dir)
   {
     $this->dir = rtrim($dir, "/");
+    $this->refreshRate  = 60 * 60 * 24;
     if(!is_dir($this->dir)){
       mkdir($this->dir);
     }
