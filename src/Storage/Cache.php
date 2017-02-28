@@ -18,7 +18,8 @@ class Cache{
     if(!is_dir($this->dir)){
       mkdir($this->dir);
     }
-    $this->file = @scandir($this->dir)[2];
+    $dir = @scandir($this->dir);
+    $this->file = $dir[2];
     if($this->file){
       $this->contents = json_decode(file_get_contents($this->dir.'/'.$this->file), true);
     }
