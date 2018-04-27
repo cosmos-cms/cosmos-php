@@ -19,10 +19,12 @@ class Cache{
       mkdir($this->dir);
     }
     $dir = @scandir($this->dir);
-    $this->file = $dir[2];
-    if($this->file){
+    if(isset($dir[2])){
+      $this->file = $dir[2];
       $this->contents = json_decode(file_get_contents($this->dir.'/'.$this->file), true);
+      return;
     }
+    $this->file = 'cosmos.cache';
   }
 
   public function addContent(Content $content)
